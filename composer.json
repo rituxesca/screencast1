@@ -1,0 +1,14 @@
+{
+    "name": "rita-t/screencast1",
+    "description": "A small app for managing the attendance of students",
+    "type": "project",
+    "require": {
+        "php": "^8.5"
+    },
+    "authors": [
+        {
+            "name": "rituxesca",
+            "email": "ritatrccoelho@gmail.com"
+        }
+    ]
+}
