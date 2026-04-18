@@ -5,7 +5,7 @@ use App\Models\Student;
 
 class AttendanceController
 {
-    static function index(): void
+    public function index(): void
     {
         $title = 'Prendre les présences';
         $students = Student::getAllStudents();

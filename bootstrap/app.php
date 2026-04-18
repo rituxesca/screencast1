@@ -9,6 +9,6 @@ const VENDOR_PATH = ROOT_PATH . '/vendor';
 const VIEWS_PATH = ROOT_PATH . '/views';
 
 
-require_once ROOT_PATH . '/toby/helpers.php';
+require_once ROOT_PATH . '/tecgdcs/helpers.php';
 
 
