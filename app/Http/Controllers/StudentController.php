@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Student;
 
 class StudentController
@@ -8,9 +10,25 @@ class StudentController
     {
         $title = 'Tous les étudiants';
         $students = Student::getAllStudents();
+
         view(
             'students.index',
             compact('title', 'students')
         );
+    }
+
+    public function create(): void
+    {
+        $title = 'Ajouter un étudiant';
+
+        view(
+            'students.create',
+            compact('title')
+        );
+    }
+
+    public function store(): void
+    {
+
     }
 }
