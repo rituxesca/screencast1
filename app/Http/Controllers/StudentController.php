@@ -29,6 +29,13 @@ class StudentController
 
     public function store(): void
     {
+        if(!isset($_REQUEST['_token'], $_SESSION['token'])){
+            die('bad request');
+        }
 
+        if($_REQUEST['_token'] !== $_SESSION['token']){
+            die('unauthorised');
+        }
+        die('enregistré');
     }
 }
