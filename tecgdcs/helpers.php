@@ -4,8 +4,10 @@ use JetBrains\PhpStorm\NoReturn;
 
 if (!function_exists('dd')) {
     #[NoReturn]
-    function dd(...$vars):void {
-        foreach ($vars as $var) {
+    function dd(...$vars):void
+    {
+        foreach ($vars as $var)
+        {
             var_dump($var);
             echo PHP_EOL;
         }
@@ -60,5 +62,12 @@ if (!function_exists('view')) {
         }else{
             die('View does not exist');
         }
+    }
+}
+
+if (!function_exists('csrf_token')) {
+    function csrf_token(int $length = 32): string
+    {
+        return $_SESSION['token'] = bin2hex(random_bytes($length));
     }
 }
