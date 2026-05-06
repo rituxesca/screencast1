@@ -2,21 +2,18 @@
 
 namespace Tecgdcs;
 
-
-
 class Router
 {
     private string $url;
     private string $method;
     private array $action;
 
-
     public function __construct(
         private array $routes =[],
     )
     {
         $this->routes = include ROOT_PATH . '/routes.php';
-        $this->url = $_SERVER['REQUEST_URI'];
+        $this->url = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
         $this->method = $_SERVER['REQUEST_METHOD'];
     }
 

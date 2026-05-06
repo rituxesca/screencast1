@@ -21,15 +21,19 @@
             <input id="matricule" name="matricule" type="text" placeholder="tecg01234" required>
         </div>
         <div>
-            <label for="birth-date">Date de naissance <sup>*</sup></label>
-            <input id="birth-date" name="birth-date" type="date" placeholder="01/01/2000" required>
+            <label for="birth-date">Date de naissance</label>
+            <input id="birth-date" name="birth-date" type="date">
         </div>
         <div>
-            <label for="profile-photo">Matricule <sup>*</sup></label>
-            <input id="profile-photo" name="profile-photo" type="file" placeholder="jean" required>
+            <label for="profile-photo">Photo</label>
+            <input id="profile-photo" name="profile-photo" type="file">
         </div>
         <div>
             <button type="submit">Enregister l'étudiant</button>
         </div>
     </form>
 </main>
+
+<?php view('partials.nav')?>
+
+<?php view('partials.footer')?>;
