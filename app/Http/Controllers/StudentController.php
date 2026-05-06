@@ -36,6 +36,30 @@ class StudentController
         if($_REQUEST['_token'] !== $_SESSION['token']){
             die('unauthorised');
         }
-        die('enregistré');
+        header('Location: /etudiants', response_code: 303);
+    }
+
+    public function show(): void
+    {
+        if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+            die('Bad request');
+        }
+
+        $id = (int)$_GET['id'];
+
+        $student = Student::find($id);
+
+        if (!$student){
+            die('Student not found');
+        }
+
+        $title = 'La fiche de ' . $student->first_name;
+
+        view('students.show',
+            compact(
+                'title',
+                'student'
+            )
+        );
     }
 }
